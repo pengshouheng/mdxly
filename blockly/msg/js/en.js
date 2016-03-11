@@ -1105,10 +1105,10 @@ Blockly.RTCMinute='Minute';
 Blockly.RTCSecond='Second';
 Blockly.RTCFormatDate='Format Date';
 Blockly.RTCFormatTime='Format Time';
-Blockly.RTCFormatWeek='Format Week';
-Blockly.RTCFormatHour='Format Hour';
-Blockly.RTCFormatMinute='Format Minute';
-Blockly.RTCFormatSecond='Format Second';
+Blockly.RTCFormatWeek='Get Week';
+Blockly.RTCFormatHour='Get Hour';
+Blockly.RTCFormatMinute='Get Minute';
+Blockly.RTCFormatSecond='Get Second';
 
 
 Blockly.melodyTakes='Melody taken';
@@ -1186,3 +1186,12 @@ Blockly.halfRhythm='Half Rhythm';
 Blockly.oneRhythm='One Rhythm';
 Blockly.twoRhythm='Two Rhythm';
 Blockly.rhythmTaken='Rhythm Taken';
+
+Blockly.clearMatrixDisplay='Clean Screen';
+Blockly.clearMatrixColor='Clean Matrix Color';
+Blockly.startMatrixT='Delay Time';
+Blockly.startMatrixXY='Start Position';
+Blockly.MatrixShowMode='Move Mode';
+Blockly.stringVar='Display Text';
+Blockly.shortPress='Short Press';
+Blockly.longPress='Long Press';

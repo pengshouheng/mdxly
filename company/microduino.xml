@@ -238,6 +238,13 @@
 			</block>
 		</value>			
 		</block>
+		<block type="OLED_simplePrint">
+		<value name="text">
+			<block type="text">
+				<field name="TEXT">hello Microduino</field>
+			</block>
+		</value>			
+		</block>
 	</category>
 	<!--功能-->
 	<category id="catMicroduinoFunction" colour="65">
@@ -639,7 +646,7 @@
 	</category>
 
 	<!--扩展变量-->
-	<category id="catVariableExpansion" colour="330">
+	<category id="catVariableExpansion" colour="220">
 		  <block type="Defination">
 	      </block>
 	      <block type="Structure">

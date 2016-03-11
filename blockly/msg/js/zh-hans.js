@@ -1109,10 +1109,10 @@ Blockly.RTCMinute='分';
 Blockly.RTCSecond='秒';
 Blockly.RTCFormatDate='格式化日期';
 Blockly.RTCFormatTime='格式化时间';
-Blockly.RTCFormatWeek='格式化周';
-Blockly.RTCFormatHour='格式化小时';
-Blockly.RTCFormatMinute='格式化分';
-Blockly.RTCFormatSecond='格式化秒';
+Blockly.RTCFormatWeek='获取周';
+Blockly.RTCFormatHour='获取小时';
+Blockly.RTCFormatMinute='获取分';
+Blockly.RTCFormatSecond='获取秒';
 
 Blockly.melodyTakes='旋律抓取';
 Blockly.low1DO='低1DO';

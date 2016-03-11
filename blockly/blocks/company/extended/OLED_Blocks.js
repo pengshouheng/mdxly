@@ -59,3 +59,23 @@ Blockly.Blocks.OLED_print = {
 	},
 };
 
+
+Blockly.Blocks.OLED_simplePrint = {
+  init: function() {
+
+    // this.setColour(Blockly.Blocks.Microduino.HUE);
+    this.setColour(Blockly.Blocks.Microduino.GRE);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.OLEDPrint)
+
+    this.appendValueInput("text", String)
+        .setCheck([Number,String])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.OLEDContext);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+//    this.setTooltip("test");  
+    this.setInputsInline(true);
+
+    },
+};
