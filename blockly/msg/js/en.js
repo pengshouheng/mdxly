@@ -1195,3 +1195,4 @@ Blockly.MatrixShowMode='Move Mode';
 Blockly.stringVar='Display Text';
 Blockly.shortPress='Short Press';
 Blockly.longPress='Long Press';
+Blockly.MicroduinoLM75='Tempture LM75';

@@ -1002,8 +1002,8 @@ Blockly.NFC='NFC模块';
 Blockly.NFC_Format_Classic='格式化MifareClassic';
 Blockly.NFC_Read='读卡';
 
-Blockly.joyStickX='X轴引脚:'
-Blockly.joyStickY='Y轴引脚:'
+Blockly.joyStickX='摇杆X轴引脚:'
+Blockly.joyStickY='摇杆Y轴引脚:'
 
 
 Blockly.GPS='全球定位'
@@ -1208,3 +1208,5 @@ Blockly.MatrixShowMode='滚动模式';
 Blockly.stringVar='显示文字';
 Blockly.shortPress='短按';
 Blockly.longPress='长按';
+Blockly.MicroduinoLM75='温度LM75';
+

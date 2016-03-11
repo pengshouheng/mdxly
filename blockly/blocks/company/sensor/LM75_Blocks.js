@@ -14,7 +14,7 @@ Blockly.Blocks.lm75 = {
     this.setColour(colorSet);
 
     this.appendDummyInput()
-    .appendField("LM75")
+    .appendField(Blockly.MicroduinoLM75)
     this.setOutput(true, Number);
 
     var tip="获取一个温度值\n";
