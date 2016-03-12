@@ -14,7 +14,8 @@ Blockly.Blocks.Microduino_KEYDigital = {
     this.appendDummyInput("")
 		.appendTitle(Blockly.Keyget)
         .appendTitle(Blockly.Keyget_Pin)
-        .appendTitle(new Blockly.FieldTextInput('4'),'KPin')
+        .appendTitle(new Blockly.FieldTextInput('4'),'KPin');
+    this.appendDummyInput("")
         .appendTitle(Blockly.Keyget_Check)
         .appendTitle(new Blockly.FieldDropdown(CHECK), "CHECK");
 
@@ -31,7 +32,7 @@ Blockly.Blocks.Microduino_KEYDigital = {
 
 
 Blockly.Blocks.Microduino_KEYAnalog = {
-  init: function() {                  
+  init: function() {
     var CHECK = [[Blockly.shortPress, 'SHORT_PRESS'],
             [Blockly.longPress, 'LONG_PRESS']]; 
 
@@ -40,11 +41,13 @@ Blockly.Blocks.Microduino_KEYAnalog = {
         .appendTitle(new Blockly.FieldTextInput('left'),'joyStickAction')
         .appendTitle(Blockly.Keyget)
         .appendTitle(Blockly.Keyget_Pin)
-        .appendTitle(new Blockly.FieldTextInput('A0'),'KPin')
+        .appendTitle(new Blockly.FieldTextInput('A0'),'KPin');
+    this.appendDummyInput("")
         .appendTitle(Blockly.Keyget_Analog)
         .appendTitle(new Blockly.FieldTextInput('0'),'MIN')
         .appendTitle(Blockly.Keyget_To)
-        .appendTitle(new Blockly.FieldTextInput('1023'),'MAX')
+        .appendTitle(new Blockly.FieldTextInput('1023'),'MAX');
+    this.appendDummyInput("")
         .appendTitle(Blockly.Keyget_Check)
         .appendTitle(new Blockly.FieldDropdown(CHECK), "CHECK");
 
