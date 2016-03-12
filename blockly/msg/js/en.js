@@ -1029,6 +1029,8 @@ Blockly.IRSend_content='content';
 Blockly.IRTYPE='Send Type';
 Blockly.IRSnd='IRSend';
 
+Blockly.Keyget='Button';
+Blockly.KeygetJoystic='JoyStick';
 Blockly.Keyget_Pin='Button Detector';
 Blockly.Keyget_InputType='InputType';
 Blockly.Keyget_Check='Check';

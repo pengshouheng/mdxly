@@ -39,7 +39,7 @@ Blockly.Blocks.Microduino_KEYAnalog = {
     this.setColour(colorSet);
     this.appendDummyInput("")
         .appendTitle(new Blockly.FieldTextInput('left'),'joyStickAction')
-        .appendTitle(Blockly.Keyget)
+        .appendTitle(Blockly.KeygetJoystic)
         .appendTitle(Blockly.Keyget_Pin)
         .appendTitle(new Blockly.FieldTextInput('A0'),'KPin');
     this.appendDummyInput("")

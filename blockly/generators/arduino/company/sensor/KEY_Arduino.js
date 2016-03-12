@@ -5,6 +5,7 @@ goog.provide('Blockly.Arduino.Microduino');
 goog.require('Blockly.Arduino');
 
 
+
 Blockly.Arduino.Microduino_KEYDigital = function() {
 
   var branch = Blockly.Arduino.statementToCode(this, 'DO');
@@ -20,8 +21,8 @@ Blockly.Arduino.Microduino_KEYDigital = function() {
   var code='';
   code+='if(Key'+pin+'.read()=='+check+') {\n';
   code+=branch;
-  code+='delay(15);\n';
   code+='}\n';
+
   //return [code, Blockly.Arduino.ORDER_ATOMIC];
   return code;
 };
@@ -43,8 +44,8 @@ Blockly.Arduino.Microduino_KEYAnalog = function() {
   var code='';
   code+='if(Key'+joyStickAction+'.read('+min+', '+max+')=='+check+') {\n';
   code+=branch;
-  code+='delay(15);\n';
   code+='}\n';
+
   //return [code, Blockly.Arduino.ORDER_ATOMIC];
   return code;
 };

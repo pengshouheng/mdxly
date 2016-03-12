@@ -1037,7 +1037,8 @@ Blockly.IRSend_content='指令内容';
 Blockly.IRTYPE='发送类型';
 Blockly.IRSnd='红外发送';
 
-Blockly.Keyget='按钮检测';
+Blockly.Keyget='按钮';
+Blockly.KeygetJoystic='摇杆';
 Blockly.Keyget_Pin='管脚';
 Blockly.Keyget_InputType='输入类型';
 Blockly.Keyget_Check='检测动作';
