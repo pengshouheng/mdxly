@@ -54,13 +54,13 @@ Blockly.Arduino.bluetoothMicroduinoBegin = function() {
 
   
   if(dropdown_pin=='core') {
-    Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial mySerial(4, 5);';
-    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial  mySerial';  
+    Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial btSerial(4, 5);';
+    Blockly.Arduino.definitions_['define_BTSerial'] = '#define bt_Serial  btSerial';  
   }
   else {
-    Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial Serial1';
+    Blockly.Arduino.definitions_['define_BTSerial'] = '#define bt_Serial Serial1';
   }
-  Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = 'my_Serial.begin(9600);';
+  Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = 'bt_Serial.begin(9600);';
   var code = '';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -70,8 +70,8 @@ Blockly.Arduino.bluetoothMicroduinoReciver = function() {
 
 var branch = Blockly.Arduino.statementToCode(this, 'reciverDataInput');
 
-  var code = 'if (my_Serial.available() > 0) { \n';
-  code+=" currentInfo = my_Serial.readStringUntil('\\n');\n";
+  var code = 'if (bt_Serial.available() > 0) { \n';
+  code+=" currentInfo = bt_Serial.readStringUntil('\\n');\n";
   code+=branch;
   code+='}\n';
   return code;
@@ -91,7 +91,7 @@ Blockly.Arduino.btMicroduinoReciverData = function() {
 Blockly.Arduino.btMicroduinoSenderData = function() {
 var str = Blockly.Arduino.valueToCode(this, 'senderText', Blockly.Arduino.ORDER_ATOMIC) || 'String(\"\")';
 
-  var code = 'my_Serial.println('+str+');\n';
+  var code = 'bt_Serial.println('+str+');\n';
   //return [code, Blockly.Arduino.ORDER_ATOMIC];
   return code;
 };

@@ -15,10 +15,10 @@ Blockly.Arduino.mCookie_Audio_Serial = function() {
 
   
   if(dropdown_pin=='core+') {
-      Blockly.Arduino.definitions_['define_mySerial'] = 'JQ6500 AUDIO(&Serial1);';
+      Blockly.Arduino.definitions_['define_audioSerial'] = 'JQ6500 AUDIO(&Serial1);';
   } else {
-    Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial mySerial(2,3);';
-    Blockly.Arduino.definitions_['define_mySerial'] = 'JQ6500 AUDIO(&mySerial);';
+    Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial audioSerial(2,3);';
+    Blockly.Arduino.definitions_['define_audioSerial'] = 'JQ6500 AUDIO(&audioSerial);';
   }
   //Blockly.Arduino.setups_['setup_mCookie_Serial'] = 'Serial.begin(9600);';
   //Blockly.Arduino.setups_['setup_mCookie_MODE'] = 'AUDIO.init('+DEVICE+','+MODE+','+Volce+');';

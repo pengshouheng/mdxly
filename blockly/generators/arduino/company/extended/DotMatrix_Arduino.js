@@ -42,9 +42,9 @@ Blockly.Arduino.DotMatrix = function() {
 	// setColorString+='  Wire.beginTransmission(add);\n';
   setColorString+='  Wire.beginTransmission('+dotAddress+');\n';
 	setColorString+='  temp[0] = 0x80|(y<<3)|x;\n';
-	setColorString+='  temp[1] = red;\n';
+	setColorString+='  temp[1] = blue;\n';
 	setColorString+='  temp[2] = 0x20|green;\n';
-	setColorString+='  temp[3] = 0x40|blue;\n';
+	setColorString+='  temp[3] = 0x40|red;\n';
 	setColorString+='  Wire.write(temp, 4);\n';
 	setColorString+='  Wire.endTransmission();\n';
 	setColorString+='}\n';
@@ -91,7 +91,7 @@ Blockly.Arduino.DotMatrix = function() {
   code+='{\n'
   code+='    for(j=0; j<8; j++)\n'
   code+='    {\n'
-  code+='        setColor(add,i,j,rgbArray'+dotName+'[i][j][2],rgbArray'+dotName+'[i][j][1],rgbArray'+dotName+'[i][j][0]);\n'
+  code+='        setColor(add,i,j,rgbArray'+dotName+'[i][j][0],rgbArray'+dotName+'[i][j][1],rgbArray'+dotName+'[i][j][2]);\n'
   code+='    }  \n'
   code+='}\n'
 
@@ -131,6 +131,7 @@ Blockly.Arduino.DotMatrixRow = function() {
 
 Blockly.Arduino.DotMatrixAddArray = function() {
 
+
   //var size=window.parseFloat(this.getTitleValue('SIZE'));
   var code = new Array(this.itemCount_);
   for (var n = 0; n < this.itemCount_; n++) {
@@ -152,6 +153,7 @@ Blockly.Arduino.DotMatrixAddArray = function() {
   // Blockly.Arduino.definitions_['DotMatrixLogo'] = DotMatrixLogo;
 
   Blockly.Arduino.setups_['setup_DotMatrix'] = 'Wire.begin();\n';
+  Blockly.Arduino.setups_['setup_Delay'] = 'delay(2000);\n';
   //var code =''+arrayVAR+'['+size+"]"+'='+ '{' + code.join(', ') + '};\n';
   //Blockly.Arduino.setups_['setup_lists'+arrayVAR] = code;
   return '';
@@ -215,8 +217,6 @@ Blockly.Arduino.clearMatrixDisplay = function() {
 };
 
 
-
-
 Blockly.Arduino.setMatrixColor = function() {
 
   var MatrixRed = Blockly.Arduino.valueToCode(this, 'MatrixRed', Blockly.Arduino.ORDER_ATOMIC);
@@ -241,8 +241,6 @@ Blockly.Arduino.MatrixWriteString = function() {
   var stringVar=this.getFieldValue('stringVar');
 
   //Blockly.Arduino.definitions_['dotMatrixstringDefine'] = 'char str[]="'+stringVar+'";';
-
-
 
   var MatrixShowMode = this.getFieldValue('MatrixShowMode');
   
