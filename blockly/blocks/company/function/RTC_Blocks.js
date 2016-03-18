@@ -43,10 +43,10 @@ init:function(){
     this.setColour(colorSet);
     this.appendDummyInput("")
 	     .appendTitle(Blockly.RTCFormatDate)
-    //this.setOutput(true, String);
+    this.setOutput(true, String);
     this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    // this.setPreviousStatement(true);
+    // this.setNextStatement(true);
   }
 };
 
