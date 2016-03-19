@@ -3,11 +3,18 @@
 // VERSION: 0.1.0
 //
 
-#ifndef JQ6500_h
-#define JQ6500_h
+#ifndef __JQ6500_H__
+#define __JQ6500_H__
 
-#include <Arduino.h>
+#if defined(ARDUINO) && ARDUINO >= 100
+	#include <Arduino.h>
+#else
+	#include <WProgram.h>
+	#include <pins_arduino.h>
+#endif
+
 #include <SoftwareSerial.h>
+#include "JQ6500_def.h"
  
 #define AUDIO_VERSION "0.1.0"
 
@@ -46,25 +53,6 @@
 #define QUERY_NAME  	0x52
 #define QUERY_FILES 	0x53
 
-#define EQ_NORMAL    	0x00
-#define EQ_POP    		0x01
-#define EQ_ROCK  		0x02
-#define EQ_JAZZ      	0x03
-#define EQ_CLASSIC    	0x04
-#define EQ_BASE			0x05
-
-#define DEVICE_U    	0x00
-#define DEVICE_TF    	0x01
-#define DEVICE_AUX  	0x02
-#define DEVICE_SLEEP    0x03
-#define DEVICE_FLASH    0x04
-
-#define MODE_ALL		0x00
-#define MODE_FOL		0x01
-#define MODE_ONE		0x02
-#define MODE_RAM		0x03
-#define	MODE_ONE_STOP	0x04
-
 
 class JQ6500{
 public:
@@ -72,18 +60,18 @@ public:
 	JQ6500(HardwareSerial *ser);
 	
 	void begin(uint16_t baud);
+	void next();
+	void prev();
 	void choose(uint16_t num);
-	void volumn(uint8_t vol);
 	void volUp();
 	void volDown();
+	void volumn(uint8_t vol);
 	void eq(uint8_t eq);
 	void setDevice(uint8_t device);
 	void sleep();
 	void reset();
 	void play();
 	void pause();
-	void next();
-	void prev();
 	void folder(uint8_t temp);
 	void setMode(uint8_t temp);
 	void chooseFile(uint8_t folder, uint8_t file);

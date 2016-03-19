@@ -62,7 +62,9 @@ Blockly.Arduino.bluetoothMicroduinoBegin = function() {
   }
   Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = 'bt_Serial.begin(9600);';
   var code = '';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+
+  return code;
+  //return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 

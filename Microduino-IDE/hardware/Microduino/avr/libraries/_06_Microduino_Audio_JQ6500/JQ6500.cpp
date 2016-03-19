@@ -2,7 +2,8 @@
 // JQ6500 audio library for Arduino
 //
 
-#include "Microduino_Audio.h"
+#include "JQ6500.h"
+#include "JQ6500_def.h"
 #include <SoftwareSerial.h>
 
 JQ6500::JQ6500(SoftwareSerial *ser) {
@@ -24,10 +25,11 @@ void JQ6500::common_init(void){
 void JQ6500::begin(uint16_t baud){
 	if(audioSwSerial) audioSwSerial->begin(baud);
 	else			  audioHwSerial->begin(baud);
-	delay(10);
+	delay(5);
 }
 
 void JQ6500::sendCommand(uint8_t cmd, uint8_t *buf, uint16_t len){
+	int i = 0;
 	sendBuffer[0] = STX;
 	sendBuffer[1] = len+2;
 	sendBuffer[2] = cmd;
@@ -35,32 +37,41 @@ void JQ6500::sendCommand(uint8_t cmd, uint8_t *buf, uint16_t len){
 		memcpy(sendBuffer+3, buf, len);
 	sendBuffer[len+3] = ETX;
 	if(audioSwSerial)
-		audioSwSerial->write(sendBuffer, 4+len);
+		audioSwSerial->write(sendBuffer, len+4);
 	else
-		audioHwSerial->write(sendBuffer, 4+len);
-	delay(200);
+		audioHwSerial->write(sendBuffer, len+4);
+	delay(70);
+}
+
+void JQ6500::next(){
+	
+	sendCommand(CMD_NEXT, NULL, 0);
+}
+
+void JQ6500::prev(){
+	
+	sendCommand(CMD_PREV, NULL, 0);
 }
 
 void JQ6500::choose(uint16_t num){
 	cmdBuffer[0] = num>>4;
-	cmdBuffer[1] = num&0x00FF;
+	cmdBuffer[1] = num&0xFF;
 	sendCommand(CMD_CHOOSE, cmdBuffer, 2);
 }
 
-void JQ6500::volumn(uint8_t vol){
-	cmdBuffer[0] = vol&0x00FF;
-	sendCommand(CMD_VOL, cmdBuffer, 1);
-	sendCommand(CMD_PLAY, NULL, 0);
-}
-
 void JQ6500::volUp(){
+	
 	sendCommand(CMD_UP, NULL, 0);
-	sendCommand(CMD_PLAY, NULL, 0);
 }
 
 void JQ6500::volDown(){
+	
 	sendCommand(CMD_DOWN, NULL, 0);
-	sendCommand(CMD_PLAY, NULL, 0);
+}
+
+void JQ6500::volumn(uint8_t vol){
+	cmdBuffer[0] = vol;
+	sendCommand(CMD_VOL, cmdBuffer, 1);
 }
 
 void JQ6500::eq(uint8_t eq){
@@ -89,18 +100,8 @@ void JQ6500::play(){
 }
 
 void JQ6500::pause(){
-
+	
 	sendCommand(CMD_PAUSE, NULL, 0);
-}
-
-void JQ6500::next(){
-	
-	sendCommand(CMD_NEXT, NULL, 0);
-}
-
-void JQ6500::prev(){
-	
-	sendCommand(CMD_PREV, NULL, 0);
 }
 
 void JQ6500::folder(uint8_t temp){
@@ -121,13 +122,10 @@ void JQ6500::chooseFile(uint8_t folder, uint8_t file){
 
 void JQ6500::init(uint8_t device, uint8_t mode, uint8_t vol){
 	begin(9600);
-	delay(300);
+	delay(100);
 	reset();
-	delay(300);
 	setDevice(device);
-	delay(300);
 	setMode(mode);
-	delay(300);
 	volumn(vol);
 }
 
@@ -143,7 +141,8 @@ uint16_t JQ6500::dataParse(){
 			}else if(temp>96&&temp<103){
 				temp -=87;  
 			}
-			sum = sum*16+temp; 
+			sum = sum*16+temp;
+			delay(1);
 		}
 	}else{
 		while(audioHwSerial->available()){
@@ -154,6 +153,7 @@ uint16_t JQ6500::dataParse(){
 				temp -=87;  
 			}
 			sum = sum*16+temp; 
+			delay(1);
 		}
 	}
 	return sum;	
@@ -165,7 +165,7 @@ uint16_t JQ6500::queryNum(uint8_t cmd){
 	else
 		audioHwSerial->flush();
 	sendCommand(cmd, NULL, 0);	
-    delay(100);	
+    delay(1);	
 	return dataParse();	
 }
 
@@ -202,8 +202,9 @@ String JQ6500::queryName(){
 	else
 		audioHwSerial->flush();
 	sendCommand(QUERY_NAME, NULL, 0);	
-    delay(100);
+	delay(1);	
 	if(audioSwSerial){
+		
 		while(audioSwSerial->available()){
 			temp = audioSwSerial->read();
 			nameCache += temp;
@@ -216,6 +217,7 @@ String JQ6500::queryName(){
 				i = 0;
 				nameCache.replace("   ", ".");
 			}
+			delay(1);
 		}
 	}else{
 		while(audioHwSerial->available()){
@@ -230,6 +232,7 @@ String JQ6500::queryName(){
 				i = 0;
 				nameCache.replace("   ", ".");
 			}
+			delay(1);
 		}
 	}
 	return nameCache;	
