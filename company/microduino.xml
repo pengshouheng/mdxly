@@ -50,6 +50,9 @@
 <script type="text/javascript" src="../../blocks/company/communication/NFC_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/communication/NFC_Arduino.js"></script>
 
+<script type="text/javascript" src="../../blocks/company/communication/IRCommunication_Blocks.js"></script>
+<script type="text/javascript" src="../../generators/arduino/company/communication/IRCommunication_Arduino.js"></script>
+
 <script type="text/javascript" src="../../blocks/company/communication/GSM_Blocks.js"></script>
 <script type="text/javascript" src="../../generators/arduino/company/communication/GSM_Arduino.js"></script>
 
@@ -433,6 +436,37 @@
 		<block type="WiFiBlynkTimer"></block>
 		<block type="WiFiBlynkVirtualWrite"></block>
 
+
+	  <block type="IRSenderCode">
+		<value name="data">
+          <shadow type="math_number">
+            <field name="NUM">0x89ABCDEF</field>
+          </shadow>
+        </value>
+		<value name="bits">
+          <shadow type="math_number">
+            <field name="NUM">32</field>
+          </shadow>
+        </value>
+	  </block>
+
+
+	  <block type="IRSenderRaw">
+	    <value name="length">
+          <shadow type="math_number">
+            <field name="NUM">3</field>
+          </shadow>
+        </value>
+		<value name="freq">
+          <shadow type="math_number">
+            <field name="NUM">38</field>
+          </shadow>
+        </value>
+	  </block>
+
+
+
+
 		<!--Zigbee-->
 		<!--
 		<block type="Zigbee_AT">
@@ -639,8 +673,8 @@
 		<block type="Microduino_KEYDigital"></block>
 		<block type="Microduino_KEYAnalog"></block>
 		<block type="lm75"></block>
-		<block type="xJoystick"></block>
-		<block type="yJoystick"></block>
+
+		<block type="xyJoystick"></block>
 		<!--TEMP HUM-->
 		<block type="mCookie_AM2321"></block>
 	</category>
