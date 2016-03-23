@@ -995,9 +995,7 @@ Blockly.smartRF_Send='发送:';
 Blockly.smartRF_Read='接收:';
 Blockly.smartRF_Send_Length='数据位数(字节为单位)';
 
-Blockly.joyStickX='X 值:';
-Blockly.joyStickY='Y 值:';
-
+Blockly.joyStickXY='摇杆轴';
 
 Blockly.NFC='NFC模块';
 Blockly.NFC_Format_Classic='格式化MifareClassic';
@@ -1005,27 +1003,27 @@ Blockly.NFC_Read='读卡';
 
 //Blockly.joyStickX='摇杆X轴引脚:'
 //Blockly.joyStickY='摇杆Y轴引脚:'
-Blockly.joyStickXY='摇杆轴'
 
-Blockly.GPS='全球定位'
-Blockly.GPSShow='定位数据显示:'
-Blockly.GPSUpdate='刷新频率:'
-Blockly.GPSHour='时'
-Blockly.GPSMinute='分'
-Blockly.GPSSeconds='秒'
-Blockly.GPSDay='天'
-Blockly.GPSMonth='月'
-Blockly.GPSYear='年'
-Blockly.GPSFix='经纬度获取成功'
-Blockly.GPSQuality='信号质量'
-Blockly.GPSLatitude='纬度'
-Blockly.GPSLat='南北纬'
-Blockly.GPSLongitude='经度'
-Blockly.GPSLon='东西经'
-Blockly.GPSSpeed='速度'
-Blockly.GPSAngle='角度'
-Blockly.GPSAltitude='海拔'
-Blockly.GPSSatellites='卫星数'
+
+Blockly.GPS='全球定位';
+Blockly.GPSShow='定位数据显示:';
+Blockly.GPSUpdate='刷新频率:';
+Blockly.GPSHour='时';
+Blockly.GPSMinute='分';
+Blockly.GPSSeconds='秒';
+Blockly.GPSDay='天';
+Blockly.GPSMonth='月';
+Blockly.GPSYear='年';
+Blockly.GPSFix='经纬度获取成功';
+Blockly.GPSQuality='信号质量';
+Blockly.GPSLatitude='纬度';
+Blockly.GPSLat='南北纬';
+Blockly.GPSLongitude='经度';
+Blockly.GPSLon='东西经';
+Blockly.GPSSpeed='速度';
+Blockly.GPSAngle='角度';
+Blockly.GPSAltitude='海拔';
+Blockly.GPSSatellites='卫星数';
 
 
 Blockly.GSM='GSM 模块';

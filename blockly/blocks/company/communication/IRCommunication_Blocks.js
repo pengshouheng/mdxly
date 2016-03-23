@@ -57,3 +57,42 @@ Blockly.Blocks.IRSenderRaw = {
 
   }
 };
+
+
+Blockly.Blocks.IRReciver = {
+  init: function() {
+    this.setColour(colorSet);
+  this.appendValueInput("PIN", Number)
+    .appendTitle(new Blockly.FieldTextInput('ir_item'), 'VAR')
+        .appendTitle(Blockly.LKL_IR_RECEIVE)
+        .setCheck(Number);
+  this.appendStatementInput('DO')
+        .appendTitle(Blockly.LKL_IR_RECEIVE_YES);
+  this.appendStatementInput('DO2')
+        .appendTitle(Blockly.LKL_IR_RECEIVE_NO);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  this.setTooltip(Blockly.LKL_IR_RECIEVE_TOOLTIP);
+  },
+  getVars: function() {
+    return [this.getFieldValue('VAR')];
+  },
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+      this.setTitleValue(newName, 'VAR');
+    }
+  }
+};
+
+
+Blockly.Blocks.IRReciverRaw = {
+  init: function() {
+    this.setColour(colorSet);
+  this.appendValueInput("PIN", Number)
+        .appendTitle(Blockly.LKL_IR_RECEIVE_RAW)
+        .setCheck(Number);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  this.setTooltip(Blockly.LKL_IR_RECIEVE_RAW_TOOLTIP);
+  }
+};

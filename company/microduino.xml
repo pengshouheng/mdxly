@@ -422,20 +422,7 @@
 		<block type="btMicroduinoSenderData"></block>
         <block type="bluetoothcolorled"></block>
 
-		<!-- <block type="WiFi"></block> -->
-		<block type="WiFiBlynk"></block>
-		<block type="BLYNK_READ"></block>
-		<block type="BLYNK_WRITE"></block>
-		<block type="BLYNKParamOne"></block>
-		<block type="BLYNKParamArray">
-			<value name="paramNum">
-				<block type="math_number">
-					<field name="NUM">0</field>
-				</block>
-			</value>
-		</block>
-		<block type="WiFiBlynkTimer"></block>
-		<block type="WiFiBlynkVirtualWrite"></block>
+
 
 	  <block type="IRSenderCode">
  		<value name="data">
@@ -463,6 +450,44 @@
            </shadow>
          </value>
  	  </block>
+
+	  <block type="IRReciver">
+		<value name="PIN">
+          <shadow type="pins_digital"></shadow>
+        </value>
+		<statement name="DO">
+			<block type="serial_print_hex">
+				<value name="CONTENT">
+					<block type="variables_get">
+						<field name="VAR">ir_item</field>
+					</block>
+				</value>
+			</block>
+		</statement>
+	  </block>
+
+	  <block type="IRReciverRaw">
+		<value name="PIN">
+          <shadow type="pins_digital"></shadow>
+        </value>
+	  </block>
+
+
+		<block type="WiFiBlynk"></block>
+		<block type="BLYNK_READ"></block>
+		<block type="BLYNK_WRITE"></block>
+		<block type="BLYNKParamOne"></block>
+		<block type="BLYNKParamArray">
+			<value name="paramNum">
+				<block type="math_number">
+					<field name="NUM">0</field>
+				</block>
+			</value>
+		</block>
+		<block type="WiFiBlynkTimer"></block>
+		<block type="WiFiBlynkVirtualWrite"></block>
+
+
 
 
 		<!--Zigbee-->
