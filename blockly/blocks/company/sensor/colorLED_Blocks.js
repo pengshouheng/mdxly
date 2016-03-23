@@ -100,3 +100,39 @@ Blockly.Blocks.ws2812DoingRGB = {
     this.setInputsInline(true);
     },
 };
+
+Blockly.Blocks.ws2812BreathRGB = {
+  init: function() {
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.ColorLEDBreath)
+        .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDCntrol.png", 40, 32))
+    this.appendValueInput("LEDIndex", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.ColorLEDIndex);
+    this.appendValueInput("red", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.ColorLEDRed);
+    this.appendValueInput("green", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.ColorLEDGreen);
+    this.appendValueInput("blue", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.ColorLEDBlue);
+
+
+    var tip="定义彩灯序号和颜色\n";
+    tip+="数字接口\n";
+    tip+="红,绿,蓝颜色值在0~255之间\n";
+    this.setTooltip(tip);
+    //this.appendStatementInput('DO')
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+//    this.setTooltip("test");  
+    this.setInputsInline(true);
+    },
+};

@@ -871,6 +871,7 @@ Blockly.ColorLEDInit='彩灯准备:';
 Blockly.ColorLEDNumber='彩灯总数:';
 Blockly.ColorLEDPin='控制引脚:';
 Blockly.ColorLEDControl='彩灯控制:';
+Blockly.ColorLEDBreath='彩灯呼吸:';
 Blockly.ColorLEDIndex='彩灯号:';
 
 Blockly.LEDBreathingFrequency='呼吸频率';
@@ -1002,10 +1003,8 @@ Blockly.NFC='NFC模块';
 Blockly.NFC_Format_Classic='格式化MifareClassic';
 Blockly.NFC_Read='读卡';
 
-// Blockly.joyStickX='摇杆X轴引脚:'
-// Blockly.joyStickY='摇杆Y轴引脚:'
-
-Blockly.joyStickXY='摇杆轴'
+Blockly.joyStickX='摇杆X轴引脚:'
+Blockly.joyStickY='摇杆Y轴引脚:'
 
 
 Blockly.GPS='全球定位'
@@ -1110,7 +1109,7 @@ Blockly.RTCWeek='周';
 Blockly.RTCHour='时';
 Blockly.RTCMinute='分';
 Blockly.RTCSecond='秒';
-Blockly.RTCFormatDate='获取日期';
+Blockly.RTCFormatDate='格式化日期';
 Blockly.RTCFormatTime='格式化时间';
 Blockly.RTCFormatWeek='获取周';
 Blockly.RTCFormatHour='获取小时';
@@ -1145,6 +1144,7 @@ Blockly.microduinoBlueReciver='蓝牙接收'
 Blockly.BTReciverData='蓝牙接收的数据'
 Blockly.BTSenderData='蓝牙发送数据';
 Blockly.BTSende='发送:';
+Blockly.blueled='蓝牙';
 
 Blockly.interalTime='间隔执行';
 Blockly.timerName='名字';

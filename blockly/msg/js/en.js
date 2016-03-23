@@ -870,6 +870,7 @@ Blockly.ColorLEDInit='ColorLED prepare:';
 Blockly.ColorLEDNumber='ColorLED number:';
 Blockly.ColorLEDPin='Control Pin:';
 Blockly.ColorLEDControl='ColorLED Control:';
+Blockly.ColorLEDBreath='ColorLED Breath:';
 Blockly.ColorLEDIndex='ColorLED Index:';
 
 Blockly.LEDBreathingFrequency='Breathing Frequency';
@@ -987,9 +988,8 @@ Blockly.RECADDR='Receive Address';
 Blockly.smartRF_Send='Send:';
 Blockly.smartRF_Send_Length='bytes of data';
 
-// Blockly.joyStickX='X Value:';
-// Blockly.joyStickY='Y Value:';
-Blockly.joyStickXY='JoyStick'
+Blockly.joyStickX='X Value:';
+Blockly.joyStickY='Y Value:';
 
 Blockly.NFC='NFC Module';
 Blockly.NFC_Format_Classic='Format to MifareClassic';
@@ -1142,6 +1142,7 @@ Blockly.microduinoBlueReciver='Bluetooth Reciver'
 Blockly.BTReciverData='Recive Data'
 Blockly.BTSenderData='Send Data';
 Blockly.BTSende='Send:';
+Blockly.blueled='Bluetooth';
 
 Blockly.interalTime='Interal Doing';
 Blockly.timerName='Name';

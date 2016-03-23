@@ -126,3 +126,21 @@ Blockly.Blocks.btMicroduinoSenderData = {
 
   }
 };
+
+Blockly.Blocks.bluetoothcolorled = {
+
+  init: function() {
+    this.setColour(colorSet);
+
+    this.appendDummyInput("")
+      .appendTitle(Blockly.blueled)
+    .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_BT.jpg", 45, 32))
+    .appendTitle(Blockly.ColorLEDControl)
+    .appendField(new Blockly.FieldImage("../../media/Microduino/colorLEDBegin.png", 80, 32))
+
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+
+
+  }
+};
