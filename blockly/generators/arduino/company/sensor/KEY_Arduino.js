@@ -49,3 +49,35 @@ Blockly.Arduino.Microduino_KEYAnalog = function() {
   //return [code, Blockly.Arduino.ORDER_ATOMIC];
   return code;
 };
+
+
+
+Blockly.Arduino.oldKEYDigital = function() {
+
+  var pin = this.getFieldValue('KPin');
+  //var type = this.getFieldValue('INPUTTYPE');
+  var check = this.getFieldValue('CHECK');
+
+  Blockly.Arduino.definitions_['define_keyOld'] = '#include <Microduino_KeyOld.h>';
+  //Blockly.Arduino.definitions_['var_key_'+pin+''] = 'Key Key'+pin+'('+pin+', '+type+');';
+  Blockly.Arduino.definitions_['var_keyOld_'+pin+''] = 'KeyOld KeyOld'+pin+'('+pin+', INPUT_PULLUP);';
+  
+  var code='';
+  code+='(KeyOld'+pin+'.read('+check+'))';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+Blockly.Arduino.oldKEYAnalog = function() {
+  var pin = this.getFieldValue('KPin');
+  var min = this.getFieldValue('MIN');
+  var max = this.getFieldValue('MAX');
+
+  Blockly.Arduino.definitions_['define_keyOld'] = '#include <Microduino_KeyOld.h>';
+  Blockly.Arduino.definitions_['var_keyOld_'+pin+''] = 'KeyOld KeyOld'+pin+'('+pin+', INPUT);';
+  
+  var code='';
+  code+='(KeyOld'+pin+'.read(PRESS, '+min+', '+max+'))';
+
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

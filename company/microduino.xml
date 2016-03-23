@@ -688,6 +688,10 @@
 	<!--传感器-->
 	<category id="catMicroduinoSensor" colour="518">
 		<!--KEY-->
+		<block type="oldKEYDigital"></block>
+		<block type="oldKEYAnalog"></block>
+
+
 		<block type="Microduino_KEYDigital"></block>
 		<block type="Microduino_KEYAnalog"></block>
 		<block type="lm75"></block>
