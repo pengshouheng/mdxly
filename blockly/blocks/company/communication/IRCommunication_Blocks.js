@@ -38,8 +38,8 @@ Blockly.Blocks.IRSenderRaw = {
   init: function() {
     this.setColour(colorSet);
 
-  // this.appendDummyInput("")
-  //     .appendTitle(Blockly.LKL_IR_SEND_RAW)
+  this.appendDummyInput("")
+      .appendTitle(Blockly.LKL_IR_SEND_RAW);
   //     .appendTitle(new Blockly.FieldDropdown([["3", "3"],["6", "6"],["8", "8"]]), "PIN");
     this.appendDummyInput("")
         .appendTitle(' '+Blockly.LKL_LIST_NAME)
