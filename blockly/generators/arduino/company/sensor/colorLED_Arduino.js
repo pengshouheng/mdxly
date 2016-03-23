@@ -69,3 +69,35 @@ Blockly.Arduino.ws2812DoingRGB = function() {
 };
 
 
+Blockly.Arduino.ws2812BreathRGB= function() {
+
+  var LEDNumber = Blockly.Arduino.valueToCode(this, 'LEDIndex', Blockly.Arduino.ORDER_ATOMIC)
+
+  var red = Blockly.Arduino.valueToCode(this, 'red', Blockly.Arduino.ORDER_ATOMIC)
+  var green = Blockly.Arduino.valueToCode(this, 'green', Blockly.Arduino.ORDER_ATOMIC)
+  var blue = Blockly.Arduino.valueToCode(this, 'blue', Blockly.Arduino.ORDER_ATOMIC)
+
+Blockly.Arduino.definitions_['define_pos_num'] = 'int led_pos = 0,led_num = 1;\n';
+Blockly.Arduino.definitions_['define_led_time'] = 'unsigned long led_time = 0;\n';
+Blockly.Arduino.definitions_['define_val_max'] = '#define val_max 255\n';
+Blockly.Arduino.definitions_['define_val_min'] = '#define val_min 0\n';
+
+var setColor='void colorSet(uint32_t c, int i) {\n';
+    setColor+='strip.setPixelColor(i, c);\n';
+    setColor+='strip.show();}\n';
+Blockly.Arduino.definitions_['define_setColor'] = setColor;
+
+var breath='void breath(int r, int g, int b, int i){\n';
+  breath+='if (millis() < led_time) led_time = millis();\n';
+  breath+='if (millis() - led_time > 10) {\n';
+  breath+='  led_pos += led_num;\n';
+  breath+='  if (led_pos >= 255 || led_pos <= 0)\n';
+  breath+='    led_num = -led_num;\n';
+  breath+='  led_time = millis();}\n';
+  breath+='colorSet(strip.Color(map(led_pos, val_min, val_max, 0, r), map(led_pos, val_min, val_max, 0, g), map(led_pos, val_min, val_max, 0, b)), i);}\n';
+Blockly.Arduino.definitions_['define_setbreath'] = breath;
+
+var code='breath('+red+','+green+','+blue+','+LEDNumber+'-1);\n';
+
+  return code;
+};

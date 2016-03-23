@@ -420,6 +420,7 @@
 		<block type="bluetoothMicroduinoReciver"></block>
 		<block type="btMicroduinoReciverData"></block>
 		<block type="btMicroduinoSenderData"></block>
+        <block type="bluetoothcolorled"></block>
 
 		<!-- <block type="WiFi"></block> -->
 		<block type="WiFiBlynk"></block>
@@ -436,35 +437,32 @@
 		<block type="WiFiBlynkTimer"></block>
 		<block type="WiFiBlynkVirtualWrite"></block>
 
-
 	  <block type="IRSenderCode">
-		<value name="data">
-          <shadow type="math_number">
-            <field name="NUM">0x89ABCDEF</field>
-          </shadow>
-        </value>
-		<value name="bits">
-          <shadow type="math_number">
-            <field name="NUM">32</field>
-          </shadow>
-        </value>
-	  </block>
-
-
-	  <block type="IRSenderRaw">
-	    <value name="length">
-          <shadow type="math_number">
-            <field name="NUM">3</field>
-          </shadow>
-        </value>
-		<value name="freq">
-          <shadow type="math_number">
-            <field name="NUM">38</field>
-          </shadow>
-        </value>
-	  </block>
-
-
+ 		<value name="data">
+           <shadow type="math_number">
+             <field name="NUM">0x89ABCDEF</field>
+           </shadow>
+         </value>
+ 		<value name="bits">
+           <shadow type="math_number">
+             <field name="NUM">32</field>
+           </shadow>
+         </value>
+ 	  </block>
+ 
+ 
+ 	  <block type="IRSenderRaw">
+ 	    <value name="length">
+           <shadow type="math_number">
+             <field name="NUM">3</field>
+           </shadow>
+         </value>
+ 		<value name="freq">
+           <shadow type="math_number">
+             <field name="NUM">38</field>
+           </shadow>
+         </value>
+ 	  </block>
 
 
 		<!--Zigbee-->
@@ -611,8 +609,28 @@
 				</block>
 			</value>
 		</block>
-
-
+        		<block type="ws2812BreathRGB">
+			<value name="LEDIndex">
+				<block type="math_number">
+					<field name="NUM">1</field>
+				</block>
+			</value>
+			<value name="red">
+				<block type="math_number">
+					<field name="NUM">255</field>
+				</block>
+			</value>
+			<value name="green">
+				<block type="math_number">
+					<field name="NUM">255</field>
+				</block>
+			</value>
+			<value name="blue">
+				<block type="math_number">
+					<field name="NUM">255</field>
+				</block>
+			</value>
+		</block>
 		<!--BUZZER-->
 		<block type="BuzzerTone">
 			<value name="BuzzerPin">
@@ -673,7 +691,6 @@
 		<block type="Microduino_KEYDigital"></block>
 		<block type="Microduino_KEYAnalog"></block>
 		<block type="lm75"></block>
-
 		<block type="xyJoystick"></block>
 		<!--TEMP HUM-->
 		<block type="mCookie_AM2321"></block>
