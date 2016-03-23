@@ -987,9 +987,9 @@ Blockly.SENDADDR='SendAddress:';
 Blockly.RECADDR='Receive Address';
 Blockly.smartRF_Send='Send:';
 Blockly.smartRF_Send_Length='bytes of data';
-
-Blockly.joyStickX='X Value:';
-Blockly.joyStickY='Y Value:';
+//Blockly.joyStickX='X Value:';
+//Blockly.joyStickY='Y Value:';
+Blockly.joyStickXY='JoyStick
 
 Blockly.NFC='NFC Module';
 Blockly.NFC_Format_Classic='Format to MifareClassic';
