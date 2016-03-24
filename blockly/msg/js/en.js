@@ -987,8 +987,7 @@ Blockly.SENDADDR='SendAddress:';
 Blockly.RECADDR='Receive Address';
 Blockly.smartRF_Send='Send:';
 Blockly.smartRF_Send_Length='bytes of data';
-//Blockly.joyStickX='X Value:';
-//Blockly.joyStickY='Y Value:';
+
 Blockly.joyStickXY='JoyStick';
 
 Blockly.NFC='NFC Module';
@@ -1001,29 +1000,26 @@ Blockly.GSM_SMS='send messages to';
 Blockly.GSM_CONTENT='Content';
 Blockly.GSM_Read='and read back';
 
-Blockly.joyStickX='X axis pin:'
-Blockly.joyStickY='Y axis pin:'
 
-
-Blockly.GPS='GPS'
-Blockly.GPSShow='GPS Data Display:'
-Blockly.GPSUpdate='Refresh:'
-Blockly.GPSHour='Hour'
-Blockly.GPSMinute='Minute'
-Blockly.GPSSeconds='Seconds'
-Blockly.GPSDay='Day'
-Blockly.GPSMonth='Month'
-Blockly.GPSYear='Year'
-Blockly.GPSFix='Location Available'
-Blockly.GPSQuality='Signal Quality'
-Blockly.GPSLatitude='Latitude'
-Blockly.GPSLat='Lat'
-Blockly.GPSLongitude='Longitude'
-Blockly.GPSLon='Lon'
-Blockly.GPSSpeed='Speed'
-Blockly.GPSAngle='Angle'
-Blockly.GPSAltitude='Altitude'
-Blockly.GPSSatellites='Satellites Number'
+Blockly.GPS='GPS';
+Blockly.GPSShow='GPS Data Display:';
+Blockly.GPSUpdate='Refresh:';
+Blockly.GPSHour='Hour';
+Blockly.GPSMinute='Minute';
+Blockly.GPSSeconds='Seconds';
+Blockly.GPSDay='Day';
+Blockly.GPSMonth='Month';
+Blockly.GPSYear='Year';
+Blockly.GPSFix='Location Available';
+Blockly.GPSQuality='Signal Quality';
+Blockly.GPSLatitude='Latitude';
+Blockly.GPSLat='Lat';
+Blockly.GPSLongitude='Longitude';
+Blockly.GPSLon='Lon';
+Blockly.GPSSpeed='Speed';
+Blockly.GPSAngle='Angle';
+Blockly.GPSAltitude='Altitude';
+Blockly.GPSSatellites='Satellites Number';
 
 Blockly.IRSend_byte='Length';
 Blockly.IRSend_content='content';
