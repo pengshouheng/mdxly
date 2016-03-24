@@ -81,3 +81,23 @@ Blockly.Arduino.oldKEYAnalog = function() {
 
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+
+
+// Blockly.Arduino.crashKey = function() {
+
+//   var pin = this.getFieldValue('KPin');
+//   //var type = this.getFieldValue('INPUTTYPE');
+//   //var check = this.getFieldValue('CHECK');
+
+//   //Blockly.Arduino.definitions_['define_key'] = '#include <Microduino_Key.h>';
+//   //Blockly.Arduino.definitions_['var_key_'+pin+''] = 'Key Key'+pin+'('+pin+', '+type+');';
+//   //Blockly.Arduino.definitions_['var_key_'+pin+''] = 'Key Key'+pin+'('+pin+', INPUT_PULLUP);';
+
+//   Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
+//   var code='';
+//   code+='!digitalRead('+dropdown_pin+')';
+//   //code+='}\n';
+
+//   return [code, Blockly.Arduino.ORDER_ATOMIC];
+// };
