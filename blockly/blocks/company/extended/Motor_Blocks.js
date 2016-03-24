@@ -20,6 +20,79 @@ Blockly.Blocks.MotorBegin = {
     }
 };
 
+Blockly.Blocks.MotorBeginchange = {
+   init: function() {
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.N20begin)
+        .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_Motor.jpg", 45, 32))
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.Motor_run = {
+   init: function() {
+
+    var Break_left_right = [
+                 [Blockly.motor_left, '1'],
+                 [Blockly.motor_right, '2'],
+              ];
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.N20choose)
+        .appendField(new Blockly.FieldDropdown(Break_left_right), 'Break_left_right');
+    this.appendDummyInput("")
+        .appendField(Blockly.motor_ctrl)
+        .appendField(new Blockly.FieldTextInput("255"), "motor_ctrl")
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.MotorBreak = {
+  init: function() {
+
+  var Break_left_right = [
+                 [Blockly.motor_left, '1'],
+                 [Blockly.motor_right, '2'],
+              ];
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.N20Break)
+        .appendField(new Blockly.FieldDropdown(Break_left_right), 'Break_left_right');
+
+    //this.setOutput(true, Number);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks.MotorFree = {
+  init: function() {
+
+  var Free_left_right = [
+                 [Blockly.motor_left, '1'],
+                 [Blockly.motor_right, '2'],
+              ];
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.N20Free)
+        .appendField(new Blockly.FieldDropdown(Free_left_right), 'Free_left_right');
+
+    //this.setOutput(true, Number);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
 Blockly.Blocks.mCookie_Motor = {
    init: function() {
     this.setColour(colorSet);

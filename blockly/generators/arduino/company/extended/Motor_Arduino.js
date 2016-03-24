@@ -42,6 +42,75 @@ Blockly.Arduino.MotorBegin = function() {
   return code;
 };
 
+Blockly.Arduino.MotorBeginchange = function() {
+  var defineMotorBegin='#include <Microduino_Motor.h>\n';
+  defineMotorBegin+='#if defined(__AVR_ATmega32U4__) || (__AVR_ATmega1284P__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega128RFA1__)\n';
+  defineMotorBegin+='#define motor_pin0A 8\n';
+  defineMotorBegin+='#define motor_pin0B 6\n';
+  defineMotorBegin+='#define motor_pin1A 7\n';
+  defineMotorBegin+='#define motor_pin1B 5\n';
+  defineMotorBegin+='#else\n';
+  defineMotorBegin+='#define motor_pin0A 6\n';
+  defineMotorBegin+='#define motor_pin0B 8\n';
+  defineMotorBegin+='#define motor_pin1A 5\n';
+  defineMotorBegin+='#define motor_pin1B 7\n';
+  defineMotorBegin+='#endif\n';
+  defineMotorBegin+='Motor MotorLeft(motor_pin0A, motor_pin0B);\n';
+  defineMotorBegin+='Motor MotorRight(motor_pin1A, motor_pin1B);\n';
+  defineMotorBegin+='#define MAX_THROTTLE 255\n';
+  defineMotorBegin+='#define MAX_STEERING 200\n';
+  defineMotorBegin+='int16_t throttle = 0;\n';
+  defineMotorBegin+='int16_t steering = 0;\n';
+
+
+  Blockly.Arduino.definitions_['define_motorBegin'] = defineMotorBegin;
+
+  var motorSetup='MotorLeft.Fix(1);\n';
+  motorSetup+='MotorRight.Fix(1);\n';
+  motorSetup+='delay(1000);\n';
+
+  Blockly.Arduino.setups_['setup_mCookie_bluetooth'] = motorSetup;
+
+
+  var code='';
+  return code;
+};
+
+Blockly.Arduino.Motor_run = function() {
+
+var Break_left_right = this.getFieldValue('Break_left_right');
+
+var throttle = this.getFieldValue('motor_ctrl');
+
+var code='throttle = '+throttle+';\n';
+
+ if (Break_left_right==1)  code+='MotorLeft.Driver(MotorLeft.GetData(throttle, 0, CHAN_LEFT));\n';
+ else if (Break_left_right==2) code+='MotorRight.Driver(MotorRight.GetData(throttle, 0, CHAN_RIGHT));\n';
+
+return code;
+
+};
+
+Blockly.Arduino.MotorBreak = function() {
+
+var Break_left_right = this.getFieldValue('Break_left_right');
+
+if (Break_left_right==1) var code='MotorLeft.Brake();\n';
+else if (Break_left_right==2) var code='MotorRight.Brake();\n';
+
+return code;
+
+};
+
+Blockly.Arduino.MotorFree = function() {
+
+var Free_left_right = this.getFieldValue('Free_left_right');
+
+if (Free_left_right==1) var code='MotorLeft.Free();\n';
+else if (Free_left_right==2) var code='MotorRight.Free();\n';
+
+return code;
+};
 
 
 Blockly.Arduino.mCookie_Motor = function() {
@@ -57,14 +126,6 @@ Blockly.Arduino.mCookie_Motor = function() {
   code+='MotorRight.Driver(MotorRight.GetData(throttle, steering, CHAN_RIGHT));\n';
   return code;
 };
-
-
-
-
-
-
-
-
 
 
 Blockly.Arduino.mCookie_bluetooth_Robot_Direction = function() {

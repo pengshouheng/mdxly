@@ -113,6 +113,14 @@
 	<category id="catMicroduinoExtended" colour="120">
 		<block type="MotorBegin">
 		</block>
+		<block type="MotorBeginchange">
+		</block>
+		<block type="Motor_run">
+		</block>
+		<block type="MotorBreak">
+		</block>
+		<block type="MotorFree">
+		</block>
 		<block type="mCookie_Motor">
 		</block>
 		<!--Dot matrix screen-->

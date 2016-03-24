@@ -887,6 +887,11 @@ Blockly.ColorLEDBlue='Blue:';
 
 Blockly.ir_r_Init='ir receiver initialize:';
 Blockly.CubeCar='Cube Car';
+Blockly.N20begin='Motor Begin';
+Blockly.N20Break='Break';
+Blockly.N20Free='Free';
+Blockly.motor_right='Right(2A,2B)';
+Blockly.motor_left='Left(1A,1B)';
 Blockly.BLE_CubeCar='BLE Car';
 Blockly.BLE_AM2321='Temperature&Humidity';
 Blockly.BLE_Tem='Temperature';
@@ -1053,7 +1058,7 @@ Blockly.WEBPAGE='WEB PAGE:';
 
 Blockly.carSpeed='Car Speed(-255~255):';
 Blockly.carAngle='Car Angle(-255~255):';
-
+Blockly.motor_ctrl='motor control(-255~255):';
 
 Blockly.OLEDBegin='OLED Begin';
 Blockly.OLEDFlip='Screen Flip';

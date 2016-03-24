@@ -892,6 +892,12 @@ Blockly.ColorLEDBlue='蓝:';
 
 Blockly.ir_r_Init='红外接收初始化:';
 Blockly.CubeCar='Cube小车';
+Blockly.N20begin='电机准备';
+Blockly.N20choose='电机选择';
+Blockly.N20Break='刹车';
+Blockly.N20Free='关闭';
+Blockly.motor_right='右(2A,2B)';
+Blockly.motor_left='左(1A,1B)';
 Blockly.BLE_CubeCar='蓝牙小车';
 Blockly.BLE_AM2321='温湿度传感器';
 Blockly.BLE_Tem='温度';
@@ -1061,6 +1067,7 @@ Blockly.WEBPAGE='子页:';
 
 Blockly.carSpeed='小车速度(-255~255):';
 Blockly.carAngle='小车方向(-255~255):';
+Blockly.motor_ctrl='电机控制(-255~255):';
 
 Blockly.OLEDBegin='OLED 初始化';
 Blockly.OLEDFlip='屏幕翻转';
