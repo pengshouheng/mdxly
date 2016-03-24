@@ -869,7 +869,7 @@ add by Microduino for chinese
 
 Blockly.ColorLEDInit='彩灯准备:';
 Blockly.ColorLEDNumber='彩灯总数:';
-Blockly.ColorLEDPin='控制引脚:';
+Blockly.ColorLEDPin='控制管脚:';
 Blockly.ColorLEDControl='彩灯控制:';
 Blockly.ColorLEDBreath='彩灯呼吸:';
 Blockly.ColorLEDIndex='彩灯号:';
@@ -1006,9 +1006,6 @@ Blockly.joyStickXY='摇杆轴';
 Blockly.NFC='NFC模块';
 Blockly.NFC_Format_Classic='格式化MifareClassic';
 Blockly.NFC_Read='读卡';
-
-//Blockly.joyStickX='摇杆X轴引脚:'
-//Blockly.joyStickY='摇杆Y轴引脚:'
 
 
 Blockly.GPS='全球定位';
