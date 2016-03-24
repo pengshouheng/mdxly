@@ -888,6 +888,7 @@ Blockly.ColorLEDBlue='Blue:';
 Blockly.ir_r_Init='ir receiver initialize:';
 Blockly.CubeCar='Cube Car';
 Blockly.N20begin='Motor Begin';
+Blockly.N20choose='Motor choose';
 Blockly.N20Break='Break';
 Blockly.N20Free='Free';
 Blockly.motor_right='Right(2A,2B)';
