@@ -1072,6 +1072,7 @@ Blockly.motor_ctrl='电机控制(-255~255):';
 Blockly.OLEDBegin='OLED 初始化';
 Blockly.OLEDFlip='屏幕翻转';
 Blockly.OLEDPrint='打印';
+Blockly.OLEDRoll='滚动';
 Blockly.OLEDFont='字体';
 Blockly.OLEDContext='内容';
 

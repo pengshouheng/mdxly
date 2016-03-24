@@ -59,6 +59,37 @@ Blockly.Blocks.OLED_print = {
 	},
 };
 
+Blockly.Blocks.OLED_print_roll = {
+  init: function() {
+    var TYPE = [['Small', 'setFont_S'],['Middle', 'setFont_M'],['Large', 'setFont_L']];
+
+    // this.setColour(Blockly.Blocks.Microduino.HUE);
+    this.setColour(Blockly.Blocks.Microduino.GRE);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.OLEDRoll)
+    this.appendDummyInput("")
+        .appendTitle(Blockly.OLEDFont)
+        .appendField(new Blockly.FieldDropdown(TYPE), 'TYPE')
+    this.appendValueInput("y", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle("y:");
+    this.appendValueInput("x", Number)
+        .setCheck(Number)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.startMatrixT);
+    this.appendValueInput("text", String)
+        .setCheck([Number,String])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendTitle(Blockly.OLEDContext);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+//    this.setTooltip("test");  
+    this.setInputsInline(true);
+
+    },
+};
+
 
 Blockly.Blocks.OLED_simplePrint = {
   init: function() {

@@ -1064,6 +1064,7 @@ Blockly.motor_ctrl='motor control(-255~255):';
 Blockly.OLEDBegin='OLED Begin';
 Blockly.OLEDFlip='Screen Flip';
 Blockly.OLEDPrint='Print';
+Blockly.OLEDRoll='Roll';
 Blockly.OLEDFont='Font';
 Blockly.OLEDContext='Context';
 
