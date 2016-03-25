@@ -113,6 +113,23 @@ return code;
 };
 
 
+Blockly.Arduino.Car_Motor = function() {
+
+  var speed = Blockly.Arduino.valueToCode(this, 'speed',Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var angle = Blockly.Arduino.valueToCode(this, 'angle',Blockly.Arduino.ORDER_ATOMIC) || '0';
+
+var code='throttle = map('+speed+', 1000, 2000, -255, 255);\n';
+    code+='steering =map('+angle+', 1000, 2000, -255, 255);\n';
+
+   // var code='throttle = '+throttle+';\n';
+   // code+='steering = '+steering+';\n';
+
+   code+='MotorLeft.Driver(MotorLeft.GetData(throttle, steering, CHAN_LEFT));\n';
+   code+='MotorRight.Driver(MotorRight.GetData(throttle, steering, CHAN_RIGHT));\n';
+  
+  return code;
+};
+
 Blockly.Arduino.mCookie_Motor = function() {
 
 

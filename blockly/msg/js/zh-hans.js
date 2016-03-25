@@ -1065,6 +1065,11 @@ Blockly.WEBPAGE='子页:';
 Blockly.carSpeed='小车速度(-255~255):';
 Blockly.carAngle='小车方向(-255~255):';
 Blockly.motor_ctrl='电机控制(-255~255):';
+Blockly.mtankDIR1='方向1(1000~2000):';
+Blockly.mTankthr1='油门1(1000~2000):';
+Blockly.mtankDIR2='方向2(1000~2000):';
+Blockly.mTankthr2='油门2(1000~2000):';
+Blockly.mTankchannel='mTank通道选择';
 
 Blockly.OLEDBegin='OLED 初始化';
 Blockly.OLEDFlip='屏幕翻转';
@@ -1087,6 +1092,7 @@ Blockly.coreUSBBoard='CoreUSB';
 Blockly.corePlusBoard='Core+';
 
 Blockly.coreBoardType='核心模块类型';
+Blockly.productType='蓝牙产品类型';
 
 Blockly.tfCard='TF卡';
 Blockly.flashMemory='闪存';
@@ -1144,10 +1150,12 @@ Blockly.high7XI='高7XI';
 
 Blockly.bluePrepare='蓝牙准备';
 Blockly.microduinoBlueReciver='蓝牙接收'
+Blockly.mTankBlueReciver='蓝牙mTank接收'
 Blockly.BTReciverData='蓝牙接收的数据'
 Blockly.BTSenderData='蓝牙发送数据';
 Blockly.BTSende='发送:';
 Blockly.blueled='蓝牙';
+Blockly.blueMtank='蓝牙mTank';
 
 Blockly.interalTime='间隔执行';
 Blockly.timerName='名字';

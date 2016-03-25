@@ -96,6 +96,49 @@ var str = Blockly.Arduino.valueToCode(this, 'senderText', Blockly.Arduino.ORDER_
   return code;
 };
 
+Blockly.Arduino.bluetoothmtankBegin = function() {
+  var Type_md_mc = this.getFieldValue('Type_md_mc');
+
+  if (Type_md_mc==1) {
+    Blockly.Arduino.definitions_['Protocol_HardSer'] = '#include <Microduino_Protocol_HardSer.h>';
+    Blockly.Arduino.definitions_['define_Protocol'] = 'Protocol ProtocolB(&Serial1, TYPE_NUM);';
+  }
+  else if (Type_md_mc==2){
+    Blockly.Arduino.definitions_['Protocol_SoftSer'] = '#include <Microduino_Protocol_SoftSer.h>';
+    Blockly.Arduino.definitions_['define_Software'] = '#include <SoftwareSerial.h>';
+    Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial mySerial(4, -1);';
+    Blockly.Arduino.definitions_['define_Protocol'] = 'Protocol ProtocolB(&mySerial, TYPE_NUM);';
+  }
+  Blockly.Arduino.setups_['setup_mCookie_bleSerial'] = 'ProtocolB.begin(9600);';
+  Blockly.Arduino.setups_['setup_mCookie_Serial'] = 'Serial.begin(9600);';
+  var code = '\n';
+  return code;
+};
+
+Blockly.Arduino.bluetoothmTankReciver = function() {
+  var branch = Blockly.Arduino.statementToCode(this, 'reciverDataInput');
+  Blockly.Arduino.definitions_['mCookie_ble_data'] = 'uint16_t Data[8];';
+
+  var code = 'int sta = ProtocolB.parse(Data, MODE_WHILE);\n';
+  code += '  if (sta == P_FINE) {\n';
+  code += '  for (int a = 0; a < CHANNEL_NUM; a++) {\n';
+  code += '    Serial.print(Data[a]);\n';
+  code += '    Serial.print(" ");\n';
+  code += '  }\n';
+  code += '  Serial.println(" \t DATA OK");\n';
+  code+=branch;
+  code += '}\n';
+  code += 'delay(10);\n';
+  return code;
+};
+
+Blockly.Arduino.bluetoothmTankdata = function() {
+  var mTankchooseNumber = this.getFieldValue('mTankchooseNumber');
+  var code = 'Data['+mTankchooseNumber+']';
+
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.bluetoothcolorled = function() {
 
 Blockly.Arduino.definitions_['define_buffer'] = 'char buffer[100];';
