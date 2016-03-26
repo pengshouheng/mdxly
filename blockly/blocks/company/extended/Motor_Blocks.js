@@ -93,6 +93,24 @@ Blockly.Blocks.MotorFree = {
   }
 };
 
+Blockly.Blocks.Car_Motor = {
+  init: function() {
+    this.setColour(colorSet);
+
+
+  this.appendValueInput('speed')
+        .setCheck(Number)
+        .appendTitle(' '+Blockly.carSpeed);
+  this.appendValueInput('angle')
+        .setCheck(Number)
+        .appendTitle(' '+Blockly.carAngle);
+  this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  this.setTooltip(Blockly.LKL_IR_SEND_RAW_TOOLTIP);
+  }
+};
+
 Blockly.Blocks.mCookie_Motor = {
    init: function() {
     this.setColour(colorSet);

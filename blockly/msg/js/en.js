@@ -1060,10 +1060,17 @@ Blockly.WEBPAGE='WEB PAGE:';
 Blockly.carSpeed='Car Speed(-255~255):';
 Blockly.carAngle='Car Angle(-255~255):';
 Blockly.motor_ctrl='motor control(-255~255):';
+Blockly.mtankDIR1='Direction1(1000~2000):';
+Blockly.mTankthr1='Throttle1(1000~2000):';
+Blockly.mtankDIR2='Direction2(1000~2000):';
+Blockly.mTankthr2='Throttle2(1000~2000):';
+Blockly.mTankchannel='mTank channel choose';
+
 
 Blockly.OLEDBegin='OLED Begin';
 Blockly.OLEDFlip='Screen Flip';
 Blockly.OLEDPrint='Print';
+Blockly.OLEDRoll='Roll';
 Blockly.OLEDFont='Font';
 Blockly.OLEDContext='Context';
 
@@ -1078,6 +1085,7 @@ Blockly.coreSerial1='Core+';
 Blockly.softSerial23='Core/CoreUSB';
 
 Blockly.coreBoardType='Core Module Type';
+Blockly.productType='Bluetooth Product Type';
 
 Blockly.coreBoard='Core';
 Blockly.coreUSBBoard='CoreUSB';
@@ -1141,10 +1149,12 @@ Blockly.high7XI='high 7XI';
 
 Blockly.bluePrepare='Bluetooth Prepare';
 Blockly.microduinoBlueReciver='Bluetooth Reciver'
+Blockly.mTankBlueReciver='Bluetooth mTank Reciver'
 Blockly.BTReciverData='Recive Data'
 Blockly.BTSenderData='Send Data';
 Blockly.BTSende='Send:';
 Blockly.blueled='Bluetooth';
+Blockly.blueMtank='Bluetooth mTank';
 
 Blockly.interalTime='Interal Doing';
 Blockly.timerName='Name';

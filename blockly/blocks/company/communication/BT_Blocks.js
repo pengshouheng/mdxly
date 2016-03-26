@@ -127,6 +127,66 @@ Blockly.Blocks.btMicroduinoSenderData = {
   }
 };
 
+Blockly.Blocks.bluetoothmtankBegin = {
+
+  init: function() {
+
+    var Type_md_mc = [
+                 ['mCookie', '1'],
+                 ['Microduino', '2'],
+              ];
+
+    this.setColour(colorSet);
+
+    this.appendDummyInput("")
+      .appendTitle(Blockly.blueMtank)
+    .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_BT.jpg", 45, 32))
+    .appendTitle(Blockly.productType)
+      .appendTitle(new Blockly.FieldDropdown(Type_md_mc), "Type_md_mc")
+
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  }
+};
+
+Blockly.Blocks.bluetoothmTankReciver = {
+  init: function() {
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+      .appendTitle(Blockly.mTankBlueReciver)
+    .appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_BT.jpg", 45, 32))
+    
+  this.appendStatementInput("reciverDataInput");
+
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  }
+};
+
+Blockly.Blocks.bluetoothmTankdata= {
+  init: function() {
+
+  var mTankchooseNumber = [
+              [Blockly.mtankDIR1, '0'],
+              [Blockly.mTankthr1, '1'],
+              [Blockly.mtankDIR2, '2'],
+              [Blockly.mTankthr2, '3'],
+              ['aux1(1000,2000)', '4'],
+              ['aux2(1000,2000)', '5'],
+              ['aux3(1000,2000)', '6'],
+              ['aux4(1000,2000)', '7'],
+              ];
+
+
+    this.setColour(colorSet);
+    this.appendDummyInput("")
+        .appendTitle(Blockly.mTankchannel)
+        .appendField(new Blockly.FieldDropdown(mTankchooseNumber), 'mTankchooseNumber');
+
+    this.setOutput(true, Number);
+  }
+};
+
 Blockly.Blocks.bluetoothcolorled = {
 
   init: function() {

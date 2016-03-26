@@ -38,6 +38,26 @@ Blockly.Arduino.OLED_print = function() {
   return code;
 };
 
+Blockly.Arduino.OLED_print_roll = function() {
+  var str = Blockly.Arduino.valueToCode(this, 'text', Blockly.Arduino.ORDER_ATOMIC) || 'String(\"\")'
+  var y = Blockly.Arduino.valueToCode(this, 'y', Blockly.Arduino.ORDER_ATOMIC)
+  var x = Blockly.Arduino.valueToCode(this, 'x', Blockly.Arduino.ORDER_ATOMIC)
+  var type = this.getFieldValue('TYPE');
+
+  Blockly.Arduino.definitions_['define_oled_x'] = 'long x_coordinate;';
+  Blockly.Arduino.definitions_['define_oled_xtime'] = 'unsigned long timer_x_coordinate = millis();';
+
+var code='if (timer_x_coordinate > millis()) timer_x_coordinate = millis();\n';
+  code+=' if(millis()-timer_x_coordinate>'+x+') {\n';
+  code+='    x_coordinate = x_coordinate - 4;\n';
+  code+='    timer_x_coordinate = millis();\n';
+  code+='  }\n';
+  code+=type+';\n';
+  code+='u8g.setPrintPos(x_coordinate,'+ y+');\n';
+  code+='u8g.print('+str+');\n';
+  return code;
+};
+
 
 Blockly.Arduino.OLED_simplePrint = function() {
   var str = Blockly.Arduino.valueToCode(this, 'text', Blockly.Arduino.ORDER_ATOMIC) || 'String(\"\")'
