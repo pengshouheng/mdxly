@@ -53,7 +53,7 @@ Blockly.Arduino.bluetoothMicroduinoBegin = function() {
   Blockly.Arduino.definitions_['define_blueReciveInfo'] = 'String currentInfo="";';
 
   
-  if(dropdown_pin=='core') {
+  if(dropdown_pin=='2') {
     Blockly.Arduino.definitions_['define_SoftwareSerial'] = 'SoftwareSerial mySerial(4, 5);';
     Blockly.Arduino.definitions_['define_mySerial'] = '#define my_Serial  mySerial';  
   }
