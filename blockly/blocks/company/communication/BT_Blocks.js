@@ -61,7 +61,7 @@ Blockly.Blocks.mCookie_bluetooth_available = {
   }
 };
 */
-var mCookie_PORTS =[[Blockly.coreUSBBoard, "coreUSB"], [Blockly.coreBoard, "core"], [Blockly.corePlusBoard, "core+"]];
+var mCookie_PORTS =[["mCookie", "1"], ["Microduino", "2"]];
 
 Blockly.Blocks.bluetoothMicroduinoBegin = {
 
@@ -71,7 +71,7 @@ Blockly.Blocks.bluetoothMicroduinoBegin = {
     this.appendDummyInput("")
 	    .appendTitle(Blockly.bluePrepare)
 		.appendField(new Blockly.FieldImage("../../media/Microduino/mCookie_BT.jpg", 45, 32))
-		.appendTitle(Blockly.coreBoardType)
+		.appendTitle(Blockly.productType)
 	    .appendTitle(new Blockly.FieldDropdown(mCookie_PORTS), "PIN")
 
     this.setPreviousStatement(true);
