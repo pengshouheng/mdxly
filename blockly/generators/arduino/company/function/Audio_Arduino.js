@@ -11,7 +11,7 @@ Blockly.Arduino.mCookie_Audio_Serial = function() {
   var Volce = Blockly.Arduino.valueToCode(this, 'Vol', Blockly.Arduino.ORDER_ATOMIC);
 
   Blockly.Arduino.definitions_['define_Software'] = '#include <SoftwareSerial.h>\n';
-  Blockly.Arduino.definitions_['define_JQ6500'] = '#include "Microduino_Audio.h"\n';
+  Blockly.Arduino.definitions_['define_JQ6500'] = '#include "JQ6500.h"\n';
 
   
   if(dropdown_pin=='core+') {
