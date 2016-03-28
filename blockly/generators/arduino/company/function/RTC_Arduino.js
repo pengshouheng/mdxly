@@ -17,7 +17,7 @@ Blockly.Arduino.mCookie_RTC_set = function() {
   Blockly.Arduino.setups_['setup_RTC_data'] = 'rtc.initClock();\n'+'rtc.setDate('+Day+','+Week+','+Mouth+',0,'+Year+');';
   Blockly.Arduino.setups_['setup_RTC_time'] = 'rtc.setTime('+Hour+','+Minute+','+Second+');\n';
 
-  var code='';
+  var code='rtc.formatTime(RTCC_TIME_HMS);\n';
   return code;
 	};
 Blockly.Arduino.mCookie_RTC_date = function() {
@@ -33,7 +33,7 @@ Blockly.Arduino.mCookie_RTC_time = function() {
 
   Blockly.Arduino.definitions_['define_RTC'] = '#include <Rtc_Pcf8563.h>\n'+'Rtc_Pcf8563 rtc;\n';
   Blockly.Arduino.definitions_['define_Wire'] = '#include "Wire.h"\n';
-  Blockly.Arduino.setups_['setup_Serial'] ='Serial.begin(9600);\n';
+  //Blockly.Arduino.setups_['setup_Serial'] ='Serial.begin(9600);\n';
   var code='rtc.formatTime(RTCC_TIME_HMS);\n'
   //return [code, Blockly.Arduino.ORDER_ATOMIC]|| 'String(\"\")';
   return code;

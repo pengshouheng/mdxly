@@ -425,7 +425,7 @@
 		    </value>
 		</block> 
 		<block type="mCookie_RTC_date"></block>
-		<block type="mCookie_RTC_time"></block>
+<!-- <block type="mCookie_RTC_time"></block> -->
 		<block type="mCookie_RTC_Week"></block>
 		<block type="mCookie_RTC_Hour"></block>
 		<block type="mCookie_RTC_Minute"></block>
